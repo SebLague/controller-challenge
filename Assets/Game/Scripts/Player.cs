@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public enum PlayerState
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 	[SerializeField]
 	private float wallJumpWait = 0.2f;
 	[SerializeField]
-	private float wallJumpForce = 4.0f;
+	private float wallJumpForce = 2.0f;
 	[SerializeField]
 	private bool invertGravity = false;
 	[SerializeField]
@@ -147,14 +147,15 @@ public class Player : MonoBehaviour
 			if (Input.GetButtonDown("Jump") == true && this.jumping == true && this.wallJumping == false && ((this.lastJumpTime + this.wallJumpWait) < Time.time) && this.controller.collisions.left == true && input.x < -0.6f)
 			{
 				this.wallJumping = true;
-				targetVelocityX = this.wallJumpForce * this.moveSpeed;
+
+				velocity.x = this.wallJumpForce * this.moveSpeed;
 				this.velocity.y = this.jumpVelocity;
 			}
 		
 			if (Input.GetButtonDown("Jump") == true && this.jumping == true && this.wallJumping == false && ((this.lastJumpTime + this.wallJumpWait) < Time.time) && this.controller.collisions.right == true && input.x > 0.6f)
 			{
 				this.wallJumping = true;
-				targetVelocityX = -(this.wallJumpForce * this.moveSpeed);
+				velocity.x = -(this.wallJumpForce * this.moveSpeed);
 				this.velocity.y = this.jumpVelocity;
 			}
 		} 
@@ -163,14 +164,14 @@ public class Player : MonoBehaviour
 			if (Input.GetButtonDown("Jump") == true && this.jumping == true && this.wallJumping == false && ((this.lastJumpTime + this.wallJumpWait) < Time.time) && this.controller.collisions.left == true && input.x > 0.6f)
 			{
 				this.wallJumping = true;
-				targetVelocityX = this.wallJumpForce * this.moveSpeed;
+				velocity.x = this.wallJumpForce * this.moveSpeed;
 				this.velocity.y = this.jumpVelocity;
 			}
 			
 			if (Input.GetButtonDown("Jump") == true && this.jumping == true && this.wallJumping == false && ((this.lastJumpTime + this.wallJumpWait) < Time.time) && this.controller.collisions.right == true && input.x < -0.6f)
 			{
 				this.wallJumping = true;
-				targetVelocityX = -(this.wallJumpForce * this.moveSpeed);
+				velocity.x = -(this.wallJumpForce * this.moveSpeed);
 				this.velocity.y = this.jumpVelocity;
 			}
 		}
