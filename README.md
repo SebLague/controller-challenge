@@ -6,6 +6,7 @@ The bug/feature can be seen in this animated gif - http://i.imgur.com/NCt1XPe.gi
 
 Forum thread on Unity Forums - http://forum.unity3d.com/threads/bug-fix-challenge-20-bounty.321593/
 
-Controller based off of the public works of Sabastian Lague - https://twitter.com/sebastianlague
+Controller based off of the public works of Sebastian Lague - https://twitter.com/sebastianlague
 
 # Good luck Unity community!
+
